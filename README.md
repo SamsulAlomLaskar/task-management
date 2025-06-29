@@ -29,7 +29,7 @@ Follow these steps to run the app locally:
 
 ### 1. Clone the repository
 
-git clone https://github.com/your-username/todo-app.git
+git clone https://github.com/SamsulAlomLaskar/task-management.git
 cd todo-app
 
 ### 2. Install dependencies
@@ -54,25 +54,6 @@ Lucide Icons for modern SVG icons
 Material UI (used only for Select in Edit Task form)
 
 localStorage for persistent state management
-
-📁 Folder Structure
-src/
-│
-├── components/
-│ ├── AddTask.tsx
-│ ├── EditTask.tsx
-│ ├── TaskItem.tsx
-│ └── TaskList.tsx
-│
-├── styles/
-│ ├── App.css
-│ ├── TaskForm.css
-│ ├── TaskItem.css
-│ └── TaskList.css
-│
-├── types.ts # Shared Task and Status types
-├── App.tsx # Root component
-└── main.tsx
 
 💡 Functionality Summary
 AddTask: Allows the user to input a title and description. Input validation ensures empty tasks are not added.
