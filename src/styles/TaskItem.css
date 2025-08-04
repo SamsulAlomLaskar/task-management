@@ -7,18 +7,15 @@
   transition: box-shadow 0.2s ease;
   position: relative;
 }
-
 .task-card:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
-
 .task-card-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.5rem;
 }
-
 .task-icon {
   width: 36px;
   height: 36px;
@@ -31,57 +28,60 @@
   color: white;
   flex-shrink: 0;
 }
-
 .task-icon.pending {
   background-color: gray;
 }
-
 .task-icon.in-progress {
   background-color: orange;
 }
-
 .task-icon.completed {
   background-color: green;
 }
-
 .task-title {
   font-size: 1.15rem;
   font-weight: 600;
   color: #222;
   flex: 1;
 }
-
+.task-actions {
+  display: flex; /* Ensure buttons are in a row */
+  gap: 0.5rem; /* Space between buttons */
+}
 .task-actions button {
   background: none;
   border: none;
   font-size: 1.1rem;
   cursor: pointer;
-  margin-left: 0.5rem;
   transition: color 0.2s;
+  display: flex; /* To center Lucide icons */
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem; /* Add some padding for click area */
 }
-
 .edit-btn {
   color: #004aad;
 }
-
 .edit-btn:hover {
   color: #003080;
 }
-
 .delete-btn {
   color: #d32f2f;
 }
-
 .delete-btn:hover {
   color: #a10000;
 }
-
+.timer-btn {
+  /* New style for timer button */
+  color: #004aad;
+}
+.timer-btn:hover {
+  color: #003080;
+}
 .task-desc {
   font-size: 0.95rem;
   color: #444;
   margin: 0.25rem 0 0.75rem;
 }
-
 .task-footer {
   display: flex;
   justify-content: space-between;
@@ -89,7 +89,6 @@
   font-size: 0.85rem;
   color: #777;
 }
-
 .status-option {
   display: flex;
   align-items: center;
@@ -98,22 +97,36 @@
   font-size: 0.85rem;
   text-transform: capitalize;
 }
-
 .status-dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   display: inline-block;
 }
-
 .dot-pending {
   background-color: gray;
 }
-
 .dot-in-progress {
   background-color: orange;
 }
-
 .dot-completed {
   background-color: green;
+}
+
+/* New styles for timer and due date */
+.task-timer,
+.task-due-date {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed #eee;
+}
+.task-timer {
+  font-weight: 600;
+  color: #004aad;
+}
+.task-due-date {
+  color: #d32f2f; /* Red for due dates */
+  font-weight: 500;
 }

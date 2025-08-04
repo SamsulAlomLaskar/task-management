@@ -1,35 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 body {
   font-family: "Inter", sans-serif;
   background-color: #f9f9f9;
 }
-
 .wrapper {
   max-width: 600px;
   margin: 0 auto;
   padding: 1rem;
 }
-
-.task-card {
-  background-color: white;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
 .task-card h3 {
   font-weight: 600;
 }
-
 .task-card p {
   color: #4b5563;
   font-size: 0.875rem;
 }
-
 .task-status {
   font-size: 0.75rem;
   font-weight: 500;
@@ -37,26 +21,21 @@ body {
   display: flex;
   align-items: center;
 }
-
 .status-dot {
   height: 8px;
   width: 8px;
   border-radius: 50%;
   margin-right: 0.5rem;
 }
-
 .status-pending {
   background-color: #9ca3af;
 }
-
 .status-inprogress {
   background-color: #f59e0b;
 }
-
 .status-completed {
   background-color: #10b981;
 }
-
 .fab {
   position: fixed;
   bottom: 24px;
@@ -73,7 +52,6 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
-
 .btn {
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -82,23 +60,19 @@ body {
   cursor: pointer;
   transition: background-color 0.2s;
 }
-
 .btn-primary {
   background-color: #1d4ed8;
   color: white;
   border: none;
 }
-
 .btn-secondary {
   background-color: white;
   border: 1px solid #1d4ed8;
   color: #1d4ed8;
 }
-
 .btn-primary:hover {
   background-color: #1e40af;
 }
-
 .btn-secondary:hover {
   background-color: #eff6ff;
 }

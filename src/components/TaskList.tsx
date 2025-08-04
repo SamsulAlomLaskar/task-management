@@ -1,21 +1,24 @@
+"use client";
+
 import { useState } from "react";
-import { Task } from "../types";
+import type { Task, TaskStatus } from "../types";
 import TaskItem from "./TaskItem";
-import "../styles/TaskList.css";
+import "../styles/TaskList.css"; // Restored CSS import
 import { ChevronDown, ChevronUp, Search } from "lucide-react";
 
 const TaskList = ({
   tasks,
   onEdit,
   onDelete,
+  onToggleTimer,
 }: {
   tasks: Task[];
   onEdit: (task: Task) => void;
   onDelete: (id: string) => void;
+  onToggleTimer: (id: string, newStatus: TaskStatus) => void; // New prop
 }) => {
   const [expanded, setExpanded] = useState<string | null>(null);
   const [search, setSearch] = useState("");
-
   const sections = ["In Progress", "Pending", "Completed"];
 
   // Toggle accordion section
@@ -43,7 +46,6 @@ const TaskList = ({
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-
       {/* If searching, show filtered results only */}
       {search.trim() ? (
         <div className="search-results">
@@ -54,6 +56,7 @@ const TaskList = ({
                 task={task}
                 onEdit={onEdit}
                 onDelete={onDelete}
+                onToggleTimer={onToggleTimer} // Pass new prop
               />
             ))
           ) : (
@@ -64,7 +67,6 @@ const TaskList = ({
         // Otherwise group tasks by status
         sections.map((status) => {
           const sectionTasks = tasks.filter((task) => task.status === status);
-
           return (
             <div
               key={status}
@@ -81,7 +83,6 @@ const TaskList = ({
                   {expanded === status ? <ChevronUp /> : <ChevronDown />}
                 </span>
               </div>
-
               {/* Section content */}
               {expanded === status && (
                 <div className="accordion-body">
@@ -92,6 +93,7 @@ const TaskList = ({
                         task={task}
                         onEdit={onEdit}
                         onDelete={onDelete}
+                        onToggleTimer={onToggleTimer} // Pass new prop
                       />
                     ))
                   ) : (
